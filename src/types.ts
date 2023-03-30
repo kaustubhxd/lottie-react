@@ -41,6 +41,7 @@ export type LottieOptions<T extends RendererType = "svg"> = Omit<
 > & {
   animationData: unknown;
   lottieRef?: LottieRef;
+  speed?: number;
   onComplete?: AnimationEventHandler | null;
   onLoopComplete?: AnimationEventHandler | null;
   onEnterFrame?: AnimationEventHandler | null;

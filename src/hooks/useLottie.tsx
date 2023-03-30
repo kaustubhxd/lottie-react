@@ -28,6 +28,7 @@ const useLottie = <T extends RendererType = "svg">(
     loop,
     autoplay,
     initialSegment,
+    speed,
 
     onComplete,
     onLoopComplete,
@@ -245,6 +246,15 @@ const useLottie = <T extends RendererType = "svg">(
       initialSegment[1],
     );
   }, [initialSegment]);
+
+  // Update the animation speed
+  useEffect(() => {
+    if (!animationInstanceRef.current) {
+      return;
+    }
+
+    animationInstanceRef.current.setSpeed(speed);
+  }, [speed]);
 
   /*
 		======================================
